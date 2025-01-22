@@ -1,35 +1,31 @@
 .s-category {
   background-color: #ed5c01;
   height: 306px;
+  p {
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+  }
   .container {
     height: 306px;
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .img-bg_s-category {
-    position: absolute;
-    top: 50px;
-    left: 0;
+    gap: 24px;
   }
   .differences {
-    p {
-      color: #fff;
-      text-align: center;
-      font-family: Inter;
-      font-size: 34px;
-      font-style: normal;
-      font-weight: 500;
-    }
+    @include centralizar;
+    flex-direction: column;
     .quantidade {
       background-color: #fbbd08;
       width: 154px;
       height: 154px;
       border-radius: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include centralizar;
       p {
         font-size: 64px;
         color: #062d3e;
@@ -38,10 +34,19 @@
   }
   .img-category {
     @include centralizar;
-    .category1 {
+    gap: 24px;
+    .category {
       @include centralizar;
       flex-direction: column;
-      gap: 16px;
+      gap: 22px;
+    }
+    .jasper {
+      @include centralizar;
+      flex-direction: column;
+      gap: 6px;
+      .jasperp {
+        font-size: 18px;
+      }
     }
   }
 }
