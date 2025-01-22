@@ -84,11 +84,9 @@
       .custom-next,
       .custom-prev {
         z-index: 10;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #062d3e; /* Fundo branco */
-        color: #000; /* Ícone preto */
+        @include centralizar;
+        background-color: #062d3e;
+        color: #000;
         width: 123px;
         height: 43px;
         border-radius: 500px;
@@ -101,9 +99,7 @@
       }
       .swiper-pagination {
         z-index: 8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include centralizar;
         gap: 8px;
       }
       .swiper-pagination-bullet {

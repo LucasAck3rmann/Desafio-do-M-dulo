@@ -1,0 +1,15 @@
+@mixin responsivo($dispositivo) {
+  @if $dispositivo == mobile {
+    max-width: 768px;
+  } @else if $dispositivo == tablet {
+    max-width: 1024px;
+  } @else {
+    max-width: 1200px;
+  }
+}
+
+@mixin centralizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
