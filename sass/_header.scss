@@ -46,19 +46,9 @@ header {
       }
     }
     .btn {
-      transition: all 0.3s ease;
-      padding: 1rem 1.8rem;
-      border-radius: 122px;
+      @include botao(#ebe3cc, #062d3e, #062d3e, #ebe3cc);
       border: 1px solid #062d3e;
-      color: #062d3e;
-      font-family: Inter;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
       &:hover {
-        background-color: #fff;
-        color: #062d3e;
         border: 1px solid #fff;
       }
     }

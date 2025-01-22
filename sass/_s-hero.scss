@@ -1,6 +1,6 @@
 .s-hero {
-  height: 805px;
   padding-top: 105px;
+  padding-bottom: 45px;
   background-color: #ebe3cc;
   .container {
     display: flex;
@@ -45,20 +45,7 @@
         }
       }
       .btn {
-        transition: all 0.3s ease;
-        padding: 1rem 1.8rem;
-        border-radius: 122px;
-        background-color: #ed5c01;
-        color: #ffffff;
-        font-family: Inter;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        &:hover {
-          background-color: #fff;
-          color: #ed5c01;
-        }
+        @include botao(#ed5c01, #ffffff, #ffffff, #ed5c01);
       }
     }
   }

@@ -1,0 +1,41 @@
+.s-parent {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #189cab;
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 90px;
+  }
+  .text_s-parent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    h2 {
+      color: #ebe3cc;
+      font-family: Inter;
+      font-size: 46px;
+      font-style: normal;
+      font-weight: 600;
+    }
+    p,
+    li {
+      color: #ebe3cc;
+      font-family: Inter;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 500;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .btn {
+      @include botao(#062d3e, #ebe3cc, #ebe3cc, #062d3e);
+      max-width: 176px;
+    }
+  }
+}
