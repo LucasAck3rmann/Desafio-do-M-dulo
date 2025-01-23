@@ -1,21 +1,20 @@
-// Seleciona os elementos do DOM
 const nav = document.querySelector(".nav");
 const btnMenu = document.querySelector(".btn-menu");
 const menu = document.querySelector(".menu");
 
-// Função para lidar com o clique no botão
+//clique no botão
 function handleButtonClick(event) {
-  if (event.type === "touchstart") event.preventDefault(); // Previne o comportamento padrão do toque
-  event.stopPropagation(); // Impede a propagação do evento
-  nav.classList.toggle("active"); // Alterna a classe 'active' no elemento nav
+  if (event.type === "touchstart") event.preventDefault();
+  event.stopPropagation();
+  nav.classList.toggle("active");
   handleClickOutside(menu, () => {
-    nav.classList.remove("active"); // Remove a classe 'active' ao clicar fora
-    setAria(); // Atualiza os atributos ARIA
+    nav.classList.remove("active");
+    setAria();
   });
-  setAria(); // Atualiza os atributos ARIA
+  setAria();
 }
 
-// Função para lidar com cliques fora do elemento alvo
+//elemento alvo
 function handleClickOutside(targetElement, callback) {
   const html = document.documentElement;
 
@@ -24,7 +23,7 @@ function handleClickOutside(targetElement, callback) {
       targetElement.removeAttribute("data-target");
       html.removeEventListener("click", handleHTMLClick);
       html.removeEventListener("touchstart", handleHTMLClick);
-      callback(); // Executa o callback
+      callback();
     }
   }
 
@@ -34,14 +33,10 @@ function handleClickOutside(targetElement, callback) {
     targetElement.setAttribute("data-target", "");
   }
 }
-
-// Função para atualizar os atributos ARIA
 function setAria() {
   const isActive = nav.classList.contains("active");
   btnMenu.setAttribute("aria-expanded", isActive);
   btnMenu.setAttribute("aria-label", isActive ? "Fechar Menu" : "Abrir Menu");
 }
-
-// Adiciona os eventos de clique e toque ao botão do menu
 btnMenu.addEventListener("click", handleButtonClick);
 btnMenu.addEventListener("touchstart", handleButtonClick);

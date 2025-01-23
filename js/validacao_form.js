@@ -6,48 +6,46 @@ const setErrorStyles = (input) =>
 const removeErrorStyles = (input) =>
   (input.style.borderBottom = "1px solid #ffffff");
 
-// Função para validar o formulário
+//validar o formulário
 const validateForm = () => {
   let isValid = true;
-  // Itera sobre todos os inputs e selects do formulário
   document.querySelectorAll("input, select").forEach((input) => {
-    // Verifica se o input é válido
+    // Verifica
     if (!input.checkValidity()) {
-      setErrorStyles(input); // Aplica estilo de erro se inválido
+      setErrorStyles(input);
       isValid = false;
     }
   });
-  // Validação específica para o campo de telefone
+  //campo de telefone
   const phoneInput = document.getElementById("tutor-phone");
   if (phoneInput.value.replace(/\D/g, "").length < 11) {
-    setErrorStyles(phoneInput); // Aplica estilo de erro se inválido
+    setErrorStyles(phoneInput);
     isValid = false;
   }
-  return isValid; // Retorna se o formulário é válido ou não
+  return isValid;
 };
 
-// Adiciona evento de submit ao formulário
+//submit
 document.querySelector("form").addEventListener("submit", (e) => {
-  if (!validateForm()) e.preventDefault(); // Impede o envio se o formulário for inválido
+  if (!validateForm()) e.preventDefault();
 });
 
-// Adiciona eventos de input e invalid para todos os inputs e selects
 document.querySelectorAll("input, select").forEach((input) => {
   input.addEventListener("input", () => {
-    if (input.checkValidity()) removeErrorStyles(input); // Remove estilo de erro se válido
+    if (input.checkValidity()) removeErrorStyles(input);
   });
   input.addEventListener("invalid", (e) => {
     e.preventDefault();
-    setErrorStyles(input); // Aplica estilo de erro se inválido
+    setErrorStyles(input);
   });
 });
 
-// Remove números do campo de nome do tutor
+//nome do tutor
 document.getElementById("tutor-name").addEventListener("input", (e) => {
   e.target.value = e.target.value.replace(/[0-9]/g, "");
 });
 
-// Formata o campo de telefone do tutor
+//telefone do tutor
 document.getElementById("tutor-phone").addEventListener("input", (e) => {
   const x = e.target.value
     .replace(/\D/g, "")
@@ -55,16 +53,42 @@ document.getElementById("tutor-phone").addEventListener("input", (e) => {
   e.target.value = !x[2] ? x[1] : `(${x[1]}) ${x[2]}${x[3] ? `-${x[3]}` : ""}`;
 });
 
-// Define a data mínima para o campo de data de agendamento
+//data de agendamento
 document.addEventListener("DOMContentLoaded", () => {
   const today = new Date().toISOString().split("T")[0];
   document.getElementById("appointment-date").setAttribute("min", today);
 });
 
-// Remove números do campo de nome do animal
+// nome do animal
 document.getElementById("animal-name").addEventListener("input", (e) => {
   e.target.value = e.target.value.replace(/[0-9]/g, "");
 });
 
-// Define o valor máximo para o campo de idade do animal
+//idade do animal
 document.getElementById("animal-age").setAttribute("max", 100);
+
+//armazena dados
+const storeFormData = () => {
+  const formData = {
+    tutorName: document.getElementById("tutor-name").value,
+    tutorPhone: document.getElementById("tutor-phone").value,
+    tutorAddress: document.getElementById("tutor-address").value,
+    appointmentDate: document.getElementById("appointment-date").value,
+    animalName: document.getElementById("animal-name").value,
+    animalAge: document.getElementById("animal-age").value,
+    animalSize: document.getElementById("animal-size").value,
+  };
+  let allFormData = JSON.parse(localStorage.getItem("allFormData")) || [];
+  allFormData.push(formData);
+  localStorage.setItem("allFormData", JSON.stringify(allFormData));
+};
+
+//submit
+document.querySelector("form").addEventListener("submit", (e) => {
+  if (!validateForm()) {
+    e.preventDefault();
+  } else {
+    storeFormData();
+    window.location.href = "/gerenciamento.html";
+  }
+});

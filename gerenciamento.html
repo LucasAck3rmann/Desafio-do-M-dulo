@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciamento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <script defer src="/js/responsivo_header.js"></script>
+    <style></style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const allFormData =
+          JSON.parse(localStorage.getItem("allFormData")) || [];
+        const container = document.createElement("div");
+        container.className = "container";
+        //Js com Inner
+        allFormData.forEach((formData, index) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `<p><strong>Nome do Animal:</strong> ${formData.animalName}</p>
+                            <p><strong>Data de Atendimento:</strong> ${formData.appointmentDate}</p>`;
+          card.addEventListener("click", () => {
+            const modalContent = `
+              <div class="modal" role="dialog" aria-labelledby="modal-title-${index}" aria-modal="true">
+                <div class="modal-content">
+                    <div class="modal-button">
+                        <span class="close-button" role="button" aria-label="Fechar">&times;</span>
+                    </div>
+                  <h2 id="modal-title-${index}">Dados do Formulário</h2>
+                  <p><strong>Tutor:</strong> ${formData.tutorName}</p>
+                  <p><strong>Telefone:</strong> ${formData.tutorPhone}</p>
+                  <p><strong>Endereço:</strong> ${formData.tutorAddress}</p>
+                  <p><strong>Data de Atendimento:</strong> ${formData.appointmentDate}</p>
+                  <p><strong>Nome do Animal:</strong> ${formData.animalName}</p>
+                  <p><strong>Idade do Animal:</strong> ${formData.animalAge}</p>
+                  <p><strong>Porte do Animal:</strong> ${formData.animalSize}</p>
+                </div>
+              </div>
+            `;
+            document.body.insertAdjacentHTML("beforeend", modalContent);
+            document
+              .querySelector(".close-button")
+              .addEventListener("click", () => {
+                document.querySelector(".modal").remove();
+              });
+          });
+          container.appendChild(card);
+        });
+
+        document.body.appendChild(container);
+      });
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo"
+          ><img src="/img/Logo.svg" alt="Logo Pet-First"
+        /></a>
+        <nav class="nav">
+          <button
+            class="btn-menu"
+            aria-label="Abrir Menu"
+            aria-haspopup="true"
+            aria-controls="menu"
+            aria-expanded="false"
+          >
+            Menu<span class="hamburger"></span>
+          </button>
+          <ul class="menu" id="menu" role="menu">
+            <li><a href="index.html#s-hero">Início</a></li>
+            <li><a href="index.html#s-parent">Sobre</a></li>
+            <li><a href="/ecommerce.html">E-commerce</a></li>
+            <li><a href="index.html#s-formulario">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>
