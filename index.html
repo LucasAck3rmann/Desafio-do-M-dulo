@@ -197,6 +197,77 @@
         </div>
       </div>
     </section>
+    <section class="s-formulario">
+      <div class="container">
+        <div class="img_s-formulario">
+          <p>Dog <span>(Lina)</span></p>
+          <img src="img/1img_s-formulario.png" alt="Imagem de um cachorro" />
+        </div>
+        <div class="form_s-formulario">
+          <h2>Formulário</h2>
+          <form>
+            <h2>Tutor</h2>
+            <input
+              type="text"
+              id="tutor-name"
+              name="tutor-name"
+              required
+              placeholder="Nome"
+            />
+            <input
+              type="tel"
+              id="tutor-phone"
+              name="tutor-phone"
+              placeholder="Telefone"
+              required
+              maxlength="15"
+            />
+            <input
+              type="text"
+              id="tutor-address"
+              name="tutor-address"
+              placeholder="Endereço"
+              required
+            />
+            <input
+              type="date"
+              id="appointment-date"
+              name="appointment-date"
+              placeholder="Data de Atendimento:"
+              required
+              max="<?php echo date('Y-m-d'); ?>"
+            />
+            <h2>Animal</h2>
+            <input
+              type="text"
+              id="animal-name"
+              name="animal-name"
+              placeholder="Nome"
+              required
+            />
+            <input
+              type="number"
+              id="animal-age"
+              name="animal-age"
+              placeholder="Idade"
+              required
+            />
+            <select id="animal-size" name="animal-size" required>
+              <option value="" disabled selected>Porte</option>
+              <option value="pequeno">Pequeno</option>
+              <option value="medio">Médio</option>
+              <option value="grande">Grande</option>
+            </select>
+            <button type="submit">Enviar</button>
+          </form>
+          <script src="/js/validacao_form.js"></script>
+        </div>
+      </div>
+
+    </section>
+    <footer>
+      
+    </footer>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Initialize Swiper -->
