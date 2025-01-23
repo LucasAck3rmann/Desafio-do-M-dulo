@@ -1,0 +1,26 @@
+footer {
+  background-color: #062d3e;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      a {
+        transition: all 0.3s ease;
+        color: #fff;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        &:hover {
+          color: #ed5c01;
+        }
+      }
+    }
+  }
+}
