@@ -7,9 +7,18 @@ footer {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    @include responsivo(mobile) {
+      flex-direction: column;
+      gap: 42px;
+    }
     .footer-links {
       display: flex;
       gap: 28px;
+      @include responsivo(mobile) {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
       a {
         transition: all 0.3s ease;
         color: #fff;
@@ -19,6 +28,9 @@ footer {
         font-weight: 600;
         &:hover {
           color: #ed5c01;
+        }
+        @include responsivo(mobile) {
+          font-size: 24px;
         }
       }
     }

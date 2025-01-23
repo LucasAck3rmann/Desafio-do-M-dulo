@@ -17,6 +17,10 @@
     justify-content: space-between;
     align-items: center;
     gap: 24px;
+    @include responsivo(mobile) {
+      flex-direction: column;
+      height: auto;
+    }
   }
   .differences {
     @include centralizar;
@@ -36,15 +40,27 @@
   .img-category {
     @include centralizar;
     gap: 24px;
+    @include responsivo(mobile) {
+      flex-direction: column;
+    }
     .category {
       @include centralizar;
       flex-direction: column;
       gap: 22px;
+      @include responsivo(mobile) {
+        flex-direction: row;
+      }
     }
     .jasper {
       @include centralizar;
       flex-direction: column;
       gap: 6px;
+      @include responsivo(tablet) {
+        display: none;
+      }
+      @include responsivo(mobile) {
+        display: block;
+      }
       .jasperp {
         font-size: 18px;
       }

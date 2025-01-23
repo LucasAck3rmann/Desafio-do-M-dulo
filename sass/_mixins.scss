@@ -1,10 +1,16 @@
 @mixin responsivo($dispositivo) {
   @if $dispositivo == mobile {
-    max-width: 768px;
+    @media (max-width: 768px) {
+      @content;
+    }
   } @else if $dispositivo == tablet {
-    max-width: 1024px;
-  } @else {
-    max-width: 1200px;
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $dispositivo == desktop {
+    @media (max-width: 1216px) {
+      @content;
+    }
   }
 }
 

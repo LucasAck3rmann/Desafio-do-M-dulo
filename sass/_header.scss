@@ -4,17 +4,23 @@ header {
   left: 0;
   top: 20px;
   z-index: 3;
+  @include responsivo(mobile) {
+    display: none;
+  }
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .right {
-    flex: 1;
-    max-width: 888px;
+    width: 888px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 4rem;
+    @include responsivo(tablet) {
+      justify-content: flex-end;
+    }
     nav {
       display: flex;
       gap: 4rem;
@@ -50,6 +56,9 @@ header {
       border: 1px solid #062d3e;
       &:hover {
         border: 1px solid #fff;
+      }
+      @include responsivo(tablet) {
+        display: none;
       }
     }
   }

@@ -3,4 +3,7 @@
   max-width: 1216px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  @include responsivo(mobile) {
+    padding: 0 1rem;
+  }
 }
