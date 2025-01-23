@@ -1,64 +1,132 @@
-header {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 20px;
-  z-index: 3;
-  @include responsivo(mobile) {
-    display: none;
-  }
+.header {
+  background-color: #ebe3cc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.6875rem;
+  padding: 1rem;
   .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
-  .right {
-    width: 888px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
-    @include responsivo(tablet) {
-      justify-content: flex-end;
+  .nav.active .menu {
+    @include responsivo(mobile) {
+      height: calc(100vh - 4.6875rem);
+      visibility: visible;
+      overflow-y: auto;
     }
-    nav {
-      display: flex;
-      gap: 4rem;
-      a {
-        transition: all 0.3s ease;
-        color: #062d3e;
-        font-family: Inter;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
+  }
+  .nav.active .hamburger {
+    @include responsivo(mobile) {
+      border-top-color: transparent;
+    }
+  }
+  .nav.active .hamburger::before {
+    @include responsivo(mobile) {
+      transform: rotate(135deg);
+    }
+  }
+  .nav.active .hamburger::after {
+    @include responsivo(mobile) {
+      transform: rotate(-135deg);
+      top: -0.4375rem;
+    }
+  }
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    @include responsivo(mobile) {
+      display: block;
+      position: absolute;
+      top: 4.6875rem;
+      left: 0;
+      background: #ebe3cc;
+      text-align: center;
+      width: 100%;
+      height: 0;
+      z-index: 100;
+      visibility: hidden;
+      overflow-y: hidden;
+      transition: all 0.5s ease;
+      flex-direction: column;
+    }
+    a {
+      transition: all 0.3s ease;
+      color: #062d3e;
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      @include responsivo(mobile) {
+        padding: 1rem 0;
+        margin-inline: 1rem;
+        border-bottom: 3px solid #fbbd08;
+        font-size: 24px;
+      }
+      &:hover {
+        color: #fff;
+        position: relative;
+        z-index: 3;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 70%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 141px;
+          height: 41px;
+          background: url("/img/img_hover_navbar.svg") no-repeat center center;
+          background-size: cover;
+          z-index: -1;
+        }
+      }
+      @include responsivo(mobile) {
         &:hover {
-          color: #fff;
-          position: relative;
-          z-index: 3;
+          color: inherit;
+          position: static;
           &::after {
-            content: "";
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 141px;
-            height: 41px;
-            background: url("/img/img_hover_navbar.svg") no-repeat center center;
-            background-size: cover;
-            z-index: -1;
+            content: none;
           }
         }
       }
     }
-    .btn {
-      @include botao(#ebe3cc, #062d3e, #062d3e, #ebe3cc);
-      border: 1px solid #062d3e;
-      &:hover {
-        border: 1px solid #fff;
-      }
-      @include responsivo(tablet) {
-        display: none;
+  }
+  .btn-menu {
+    display: none;
+    @include responsivo(mobile) {
+      background: none;
+      border: none;
+      font: inherit;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 0;
+      cursor: pointer;
+      color: #062d3e;
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    .hamburger {
+      @include responsivo(mobile) {
+        border-top: 0.125rem solid;
+        width: 1.25rem;
+        &::after,
+        &::before {
+          content: " ";
+          display: block;
+          width: 1.25rem;
+          height: 0.125rem;
+          background: currentColor;
+          margin-top: 0.3125rem;
+          position: relative;
+          transition: 0.3s;
+        }
       }
     }
   }

@@ -28,6 +28,9 @@ footer {
         font-weight: 600;
         &:hover {
           color: #ed5c01;
+          @include responsivo(mobile) {
+            color: #fff;
+          }
         }
         @include responsivo(mobile) {
           font-size: 24px;

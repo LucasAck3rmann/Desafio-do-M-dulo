@@ -15,25 +15,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pet-First</title>
     <link rel="stylesheet" href="css/main.min.css" />
+    <script defer src="/js/responsivo_header.js"></script>
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="container">
-        <a href="#">
-          <img src="./img/Logo.svg" alt="Logo Pet-First" />
-        </a>
-        <div class="right">
-          <nav>
-            <a href="#">About</a>
-            <a href="#">Service</a>
-            <a href="#">Madi-Care</a>
-            <a href="#">E-commerce</a>
-          </nav>
-          <a href="#" class="btn">Gerenciamento</a>
-        </div>
+        <a href="#" class="logo"
+          ><img src="/img/Logo.svg" alt="Logo Pet-First"
+        /></a>
+        <nav class="nav">
+          <button
+            class="btn-menu"
+            aria-label="Abrir Menu"
+            aria-haspopup="true"
+            aria-controls="menu"
+            aria-expanded="false"
+          >
+            Menu<span class="hamburger"></span>
+          </button>
+          <ul class="menu" id="menu" role="menu">
+            <li><a href="#s-hero">Início</a></li>
+            <li><a href="#s-parent">Sobre</a></li>
+            <li><a href="/ecommerce.html">E-commerce</a></li>
+            <li><a href="#s-formulario">Contato</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
-    <section class="s-hero">
+    <section class="s-hero" id="s-hero">
       <div class="container">
         <div class="pet-first">
           <div class="top-first">
@@ -98,7 +107,7 @@
         </div>
       </div>
     </section>
-    <section class="s-category">
+    <section class="s-category" id="s-category">
       <div class="container">
         <div class="differences">
           <p>Different</p>
@@ -139,7 +148,7 @@
         </div>
       </div>
     </section>
-    <section class="s-parent">
+    <section class="s-parent" id="s-parent">
       <div class="container">
         <img
           src="img/img_s-parent.png"
@@ -197,7 +206,7 @@
         </div>
       </div>
     </section>
-    <section class="s-formulario">
+    <section class="s-formulario" id="s-formulario">
       <div class="container">
         <div class="img_s-formulario">
           <p>Dog <span>(Lina)</span></p>
@@ -268,10 +277,10 @@
       <div class="container">
         <img src="/img/Pet-First_Logo-Footer.svg" alt="Logo Pet-First" />
         <div class="footer-links">
-          <a href="#">About</a>
-          <a href="#">Service</a>
-          <a href="#">Madi-Care</a>
-          <a href="#">E-commerce</a>
+          <a href="#s-hero">Início</a>
+          <a href="#s-parent">Sobre</a>
+          <a href="/ecommerce.html">E-commerce</a>
+          <a href="#s-formulario">Contato</a>
         </div>
       </div>
     </footer>

@@ -1,7 +1,10 @@
 .s-hero {
-  padding-top: 105px;
+  padding-top: 60px;
   padding-bottom: 45px;
   background-color: #ebe3cc;
+  @include responsivo(mobile) {
+    padding-bottom: 105px;
+  }
   .container {
     display: flex;
     flex-direction: row;
