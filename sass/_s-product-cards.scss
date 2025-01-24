@@ -1,0 +1,49 @@
+.s-product-cards {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding-top: 85px;
+    padding-bottom: 85px;
+    .cardproduto {
+      background-color: #ebe3cc;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      h3,
+      p {
+        margin: 10px 0;
+        color: #062d3e;
+        font-family: Inter;
+        font-weight: 500;
+      }
+      p,
+      button {
+        font-size: 14px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      button {
+        border-radius: 20px;
+        padding: 10px 20px;
+        background-color: #fbbd08;
+        color: #062d3e;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+}

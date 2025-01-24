@@ -1,11 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>E-Commerce</title>
+    <link rel="icon" href="/img/favicon.svg" type="image/svg" />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <script defer src="/js/responsivo_header.js"></script>
+    <script defer src="/js/local_ecommerce.js"></script>
   </head>
   <body>
-    Teste
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo"
+          ><img src="/img/Logo.svg" alt="Logo Pet-First"
+        /></a>
+        <nav class="nav">
+          <button
+            class="btn-menu"
+            aria-label="Abrir Menu"
+            aria-haspopup="true"
+            aria-controls="menu"
+            aria-expanded="false"
+          >
+            Menu<span class="hamburger"></span>
+          </button>
+          <ul class="menu" id="menu" role="menu">
+            <li><a href="index.html#s-hero">Início</a></li>
+            <li><a href="index.html#s-parent">Sobre</a></li>
+            <li><a href="/ecommerce.html">E-commerce</a></li>
+            <li><a href="index.html#s-formulario">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="s-product-cards" aria-label="Product List">
+      <div class="container">
+        <div class="cards" role="list">
+          <div class="cardproduto" role="listitem">
+            <img
+              src="/img/1-card_ecommerce.png"
+              alt="Gran Choice 1.5kg (Gatos)"
+            />
+            <h3>Gran Choice 1.5kg (Gatos)</h3>
+            <p>R$100.00</p>
+            <button
+              aria-label="Adicionar Gran Choice 1.5kg (Gatos) ao carrinho"
+              onclick="addToCart('Gran Choice 1.5kg (Gatos)', 100.00)"
+            >
+              Adicionar ao carrinho
+            </button>
+          </div>
+          <div class="cardproduto" role="listitem">
+            <img src="/img/2-card_ecommerce.png" alt="Gran Plus 250g (Gatos)" />
+            <h3>Gran Plus 250g (Gatos)</h3>
+            <p>R$25.00</p>
+            <button
+              aria-label="Adicionar Gran Plus 250g (Gatos) ao carrinho"
+              onclick="addToCart('Gran Plus 250g (Gatos)', 25.00)"
+            >
+              Adicionar ao carrinho
+            </button>
+          </div>
+          <div class="cardproduto" role="listitem">
+            <img src="/img/3-card_ecommerce.png" alt="Golden 1.5kg (Gatos)" />
+            <h3>Golden 1.5kg (Gatos)</h3>
+            <p>R$75.00</p>
+            <button
+              aria-label="Adcionar Golden 1.5kg (Gatos) ao carrinho"
+              onclick="addToCart('Golden 1.5kg (Gatos)', 75.00)"
+            >
+              Adicionar ao carrinho
+            </button>
+          </div>
+          <div class="cardproduto" role="listitem">
+            <img
+              src="/img/4-card_ecommerce.png"
+              alt="Royal Canin 3kg (Gatos)"
+            />
+            <h3>Royal Canin 3kg (Gatos)</h3>
+            <p>R$110.00</p>
+            <button
+              aria-label="Adicionar Royal Canin 3kg (Gatos) ao carrinho"
+              onclick="addToCart('Royal Canin 3kg (Gatos)', 110.00)"
+            >
+              Adicionar ao carrinho
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="s-parent" id="s-parent">
+      <div class="container">
+        <div class="text_s-parent">
+          <h2>Sobre Nós</h2>
+          <p>
+            Somos a Pet-Fisrt e temos como missão proporcionar uma vida mais
+            saudável e feliz para os pets. Nossa loja online oferece uma
+            variedade de produtos para cães e gatos, desde rações até brinquedos
+            e acessórios. Além disso, contamos com um serviço de adoção de
+            animais, entrega de ração congelada e entrega no dia seguinte.
+          </p>
+          <ul>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="8" cy="8.00012" r="8" fill="#062D3E" />
+                </svg> </span
+              >Adoção
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="8" cy="8.00012" r="8" fill="#062D3E" />
+                </svg> </span
+              >Entrega de Ração Congelada
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="8" cy="8.00012" r="8" fill="#062D3E" />
+                </svg> </span
+              >Entrega no Dia Seguinte
+            </li>
+          </ul>
+          <a href="/gerenciamento.html" class="btn">Gerenciamento</a>
+        </div>
+        <img
+          src="img/img_s-parent.png"
+          alt="Imagem de um cachorro com uma mulher"
+        />
+      </div>
+    </section>
+    <section class="s-product-cards" aria-label="Product List">
+      <div class="container">
+        <div class="cards" role="list">
+          <div class="cardproduto" role="listitem">
+            <img
+              src="/img/5-card_ecommerce.png"
+              alt="Nutricon Bottom Fish 50g"
+            />
+            <h3>Nutricon Bottom Fish 50g</h3>
+            <p>R$40.00</p>
+            <button
+              aria-label="Adicionar Nutricon Bottom Fish 50g ao carrinho"
+              onclick="addToCart('Nutricon Bottom Fish 50g', 40.00)"
+            >
+              Adicionar ao carrinho
+            </button>
+          </div>
+          <div class="cardproduto" role="listitem">
+            <img src="/img/6-card_ecommerce.png" alt="Aleon Nano Sticks 80g" />
+            <h3>Aleon Nano Sticks 80g</h3>
+            <p>R$45.00</p>
+            <button
+              aria-label="Adicionar Aleon Nano Sticks 80g ao carrinho"
+              onclick="addToCart('Aleon Nano Sticks 80g', 45.00)"
+            >
+              Adicionar ao carrinho
+            </button>
+          </div>
+          <div class="cardproduto" role="listitem">
+            <img src="/img/7-card_ecommerce.png" alt="Golden 1.5kg (Dog)" />
+            <h3>Golden 1.5kg (Dog)</h3>
+            <p>R$95.00</p>
+            <button
+              aria-label="Adcionar Golden 1.5kg (Dog) ao carrinho"
+              onclick="addToCart('Golden 1.5kg (Dog)', 95.00)"
+            >
+              Adicionar ao carrinho
+            </button>
+          </div>
+          <div class="cardproduto" role="listitem">
+            <img src="/img/8-card_ecommerce.png" alt="Golden 150g (Dog)" />
+            <h3>Golden 150g (Dog)</h3>
+            <p>R$50.00</p>
+            <button
+              aria-label="Adicionar Golden 150g (Dog) ao carrinho"
+              onclick="addToCart('Golden 150g (Dog)', 50.00)"
+            >
+              Adicionar ao carrinho
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <img src="/img/Pet-First_Logo-Footer.svg" alt="Logo Pet-First" />
+        <div class="footer-links">
+          <a href="index.html#s-hero">Início</a>
+          <a href="index.html#s-parent">Sobre</a>
+          <a href="/ecommerce.html">E-commerce</a>
+          <a href="index.html#s-formulario">Contato</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
